@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CZJB.Dto\CZJB.Dto.csproj" />
-    <ProjectReference Include="..\CZJB.SQLDataAccess\CZJB.SQLDataAccess.csproj" />
   </ItemGroup>
 
 </Project>

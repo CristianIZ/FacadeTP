@@ -8,4 +8,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CZJB.Dto\CZJB.Dto.csproj" />
+    <ProjectReference Include="..\CZJB.Services\CZJB.Services.csproj" />
+    <ProjectReference Include="..\CZJB.SQLDataAccess\CZJB.SQLDataAccess.csproj" />
+  </ItemGroup>
+
 </Project>

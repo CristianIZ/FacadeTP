@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace CZJB.Services
 {
-    public class Laboratorio
+    public class Radiologia
     {
-        public void RealizarAnalisisDeSangre(User user)
+        public void RealizarRadiografia(User user)
         {
-            new LabContext().Add(new LabAppointment()
+            new RadContext().Add(new RadAppointment()
             {
-                ScheduleDate = DateTime.Now.AddDays(10),
                 UserId = user.Id,
+                ScheduleDate = DateTime.Now.AddDays(10),
             });
 
-            Console.WriteLine("Programando análisis de sangre para dentro de 10 dias...");
+            Console.WriteLine("Programando radiografía para dentro de 10 dias...");
         }
     }
 }

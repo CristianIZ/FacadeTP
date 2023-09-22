@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace CZJB.Services
 {
-    public class Laboratorio
+    public class ConsultaMedica
     {
-        public void RealizarAnalisisDeSangre(User user)
+        public void RealizarConsulta(User user)
         {
-            new LabContext().Add(new LabAppointment()
+            new AppointmentContext().Add(new Appointment()
             {
-                ScheduleDate = DateTime.Now.AddDays(10),
                 UserId = user.Id,
+                ScheduleDate = DateTime.Now.AddDays(10),
             });
 
-            Console.WriteLine("Programando análisis de sangre para dentro de 10 dias...");
+            Console.WriteLine("Programando consulta médica para dentro de 10 dias...");
         }
     }
 }
