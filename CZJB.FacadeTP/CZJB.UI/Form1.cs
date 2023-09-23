@@ -53,6 +53,7 @@ namespace CZJB.UI
         {
             var users = new UsersContext().GetAll();
 
+            cmbPacientes.Items.Clear();
             foreach (var user in users)
             {
                 cmbPacientes.Items.Add(user);
@@ -67,19 +68,28 @@ namespace CZJB.UI
             {
                 sb.AppendLine($"Citas para el usuario {user.Name} {user.LastName}");
 
-                foreach (var appointment in appointments.Where(c => c.UserId == user.Id))
+                if (appointments != null)
                 {
-                    sb.AppendLine($"Cita con medico fecha: {appointment.ScheduleDate}");
+                    foreach (var appointment in appointments.Where(c => c.UserId == user.Id))
+                    {
+                        sb.AppendLine($"Cita con medico fecha: {appointment.ScheduleDate}");
+                    }
                 }
 
-                foreach (var radAppointment in radAppointments.Where(c => c.UserId == user.Id))
+                if (radAppointments != null)
                 {
-                    sb.AppendLine($"Cita con radiologia fecha: {radAppointment.ScheduleDate}");
+                    foreach (var radAppointment in radAppointments.Where(c => c.UserId == user.Id))
+                    {
+                        sb.AppendLine($"Cita con radiologia fecha: {radAppointment.ScheduleDate}");
+                    }
                 }
 
-                foreach (var labAppointment in labAppointments.Where(c => c.UserId == user.Id))
+                if (labAppointments != null)
                 {
-                    sb.AppendLine($"Cita con laboratorio fecha: {labAppointment.ScheduleDate}");
+                    foreach (var labAppointment in labAppointments.Where(c => c.UserId == user.Id))
+                    {
+                        sb.AppendLine($"Cita con laboratorio fecha: {labAppointment.ScheduleDate}");
+                    }
                 }
 
                 sb.AppendLine($"---------------------------");
